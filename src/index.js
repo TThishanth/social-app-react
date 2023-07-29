@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { ThemeModeContextProvider } from './context/themeModeContext';
+import { AuthContextProvider } from './context/authContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeModeContextProvider>
+      <AuthContextProvider>
+        <App />
+      </AuthContextProvider>
+    </ThemeModeContextProvider>
   </React.StrictMode>
 );
 
