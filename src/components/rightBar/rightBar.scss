@@ -4,12 +4,18 @@
     @include themify($themes) {
         flex: 3;
         position: sticky;
-        top: 70px;
-        height: calc(100vh - 70px);
         overflow: scroll;
         background-color: themed("bgSoft");
     
         &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include mobile {
+            display: none;
+        }
+
+        @include tablet{
             display: none;
         }
     
